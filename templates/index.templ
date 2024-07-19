@@ -1,0 +1,21 @@
+package templates
+
+import "github.com/vaeho/go-todo/templates/common"
+
+templ Index() {
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			//<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="css/output.css"/>
+			<title>Golang TODO</title>
+		</head>
+		<body>
+			<div class="h-screen w-screen bg-white flex justify-center items-center">
+				@common.Typography("normal", "TODO-LIST", "")
+				@Hello("John")
+				@common.Button("Add Todo")
+			</div>
+		</body>
+	</html>
+}
