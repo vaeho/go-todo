@@ -27,7 +27,7 @@ func Typography(variant string, label string, classNames string) templ.Component
 		}
 		ctx = templ.ClearChildren(ctx)
 		if variant == "header" {
-			var templ_7745c5c3_Var2 = []any{"text-red-600 font-sans text-xl", classNames}
+			var templ_7745c5c3_Var2 = []any{"text-black font-sans text-5xl", classNames}
 			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var2...)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
@@ -52,7 +52,7 @@ func Typography(variant string, label string, classNames string) templ.Component
 			var templ_7745c5c3_Var4 string
 			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(label)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/common/typography.templ`, Line: 5, Col: 68}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/common/typography.templ`, Line: 5, Col: 67}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 			if templ_7745c5c3_Err != nil {
@@ -63,7 +63,7 @@ func Typography(variant string, label string, classNames string) templ.Component
 				return templ_7745c5c3_Err
 			}
 		} else {
-			var templ_7745c5c3_Var5 = []any{"text-red-600 font-sans text-sm", classNames}
+			var templ_7745c5c3_Var5 = []any{"text-white font-sans text-sm", classNames}
 			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var5...)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
@@ -88,7 +88,7 @@ func Typography(variant string, label string, classNames string) templ.Component
 			var templ_7745c5c3_Var7 string
 			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(label)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/common/typography.templ`, Line: 7, Col: 67}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/common/typography.templ`, Line: 7, Col: 65}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 			if templ_7745c5c3_Err != nil {

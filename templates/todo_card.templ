@@ -1,0 +1,16 @@
+package templates
+
+import "github.com/vaeho/go-todo/templates/common"
+
+type Todo struct {
+	id   string
+	text string
+}
+
+templ TodoCard(todo Todo) {
+	<div class="p-6 py-3 flex flex-row items-center w-full gap-4 rounded-2xl border border-white border-solid">
+		@common.Typography("normal", todo.text, "flex-1")
+		<span class="material-icons material-symbols-outlined text-white cursor-pointer hover:opacity-50">edit</span>
+		<span class="material-icons material-symbols-outlined text-white cursor-pointer hover:opacity-50">delete</span>
+	</div>
+}

@@ -8,7 +8,10 @@ package templates
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/vaeho/go-todo/templates/common"
+import (
+	"github.com/vaeho/go-todo/templates/common"
+	"github.com/vaeho/go-todo/templates/components"
+)
 
 func Index() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
@@ -28,23 +31,30 @@ func Index() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<html lang=\"en\"><head><meta charset=\"UTF-8\"><link rel=\"stylesheet\" href=\"css/output.css\"><title>Golang TODO</title></head><body><div class=\"h-screen w-screen bg-white flex justify-center items-center\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<html lang=\"en\"><head><meta charset=\"UTF-8\"><link rel=\"stylesheet\" href=\"css/output.css\"><link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\"><script src=\"https://unpkg.com/htmx.org@2.0.1/dist/htmx.js\" integrity=\"sha384-gpIh5aLQ0qmX8kZdyhsd6jA24uKLkqIr1WAGtantR4KsS97l/NRBvh8/8OYGThAf\" crossorigin=\"anonymous\"></script><title>Golang TODO</title></head><body><div class=\"h-screen w-screen bg-white flex flex-col justify-center items-center relative\"><div class=\" w-screen bg-white flex flex-col justify-center items-center relative max-w-2xl\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = common.Typography("normal", "TODO-LIST", "").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = common.Typography("header", "To Do List", "mb-6").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = Hello("John").Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = components.AddTodoButton().Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = common.Button("Add Todo").Render(ctx, templ_7745c5c3_Buffer)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"bg-blue-700 p-6 rounded-2xl shadow-lg w-full\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></body></html>")
+		templ_7745c5c3_Err = TodoCard(Todo{
+			id:   "test",
+			text: "First todo",
+		}).Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></div></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
